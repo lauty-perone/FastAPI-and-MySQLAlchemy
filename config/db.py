@@ -1,3 +1,9 @@
 from sqlalchemy import create_engine, MetaData
 
-create_engine("mysql+pymysql://root:Bale2002@localhost:3306/")
+DATABASE_URL = "mysql+pymysql://root:secret@localhost:3306/storedb"
+
+engine = create_engine(DATABASE_URL)
+
+meta = MetaData()
+
+conn = engine.connect()
