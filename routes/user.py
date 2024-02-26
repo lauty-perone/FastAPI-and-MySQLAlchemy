@@ -1,10 +1,10 @@
 from fastapi import APIRouter, status, HTTPException
-from config.db import conn
 from models.user import users
 from schemas.user import User, UserCount
 from typing import List
 from sqlalchemy import func, select
 from cryptography.fernet import Fernet
+from config.db import conn
 
 user = APIRouter(prefix="/userdb",
                    tags=["userdb"],
