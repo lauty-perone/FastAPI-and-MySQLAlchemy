@@ -1,10 +1,13 @@
 from fastapi import FastAPI
-from routes.user import user
+from routers import user_db
 
+#Crea una instancia de FastAPI
 app = FastAPI()
 
-app.include_router(user.routes)
+#Incluye el router user
+app.include_router(user_db.user)
 
+#Devuelve en "/" "Hola Mundo"
 @app.get("/")
 async def root():
     return ("Hola Mundo")

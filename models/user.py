@@ -7,5 +7,5 @@ users = Table("users", meta, Column("id", Integer, primary_key=True),
               Column("email", String(255)),
               Column("password", String(255)))
 
-meta.create_all(bind=engine, tables=[users])
+meta.create_all(engine)
 
